@@ -1,16 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
+//this is the root module for the angular application..
+import { BrowserModule } from '@angular/platform-browser';//importing this module from the library mentioned.
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-@NgModule({
+@NgModule({//this class has the declarator associated with it which is an NgModule..
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule
+  imports: [//imports property specifying those modules that needs to be imported or the modules upon which our module is dependent upon 
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [],//here comes the services that our module use 
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } // module exports something that can be used by some another module
+//typescript adds classes to the typical java script code

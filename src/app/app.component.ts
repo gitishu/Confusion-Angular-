@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+///file supports root component that forms part of our angular application 
+import { Component } from '@angular/core';//importing the compoennet class from the angular core library.
 
 @Component({
   selector: 'app-root',
