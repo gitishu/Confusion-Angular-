@@ -2,16 +2,78 @@
   menu works!
 </p> -->
 <div class="container" fxLayout="column" fxLayoutGap="10px">
-	<md-list fxFlex>
-	  <md-list-item *ngFor="let dish of dishes"> <!-- structural directive in angular -->
+	<div fxFlex>
+		<div>
+			<h3>Menu</h3>
+			<hr>
+		</div>
+	</div>
+
+	<div fxFlex>
+	<md-grid-list cols="2" rowHeight="200px"> <!-- mg grid list is in its own div now --> 
+	  <md-grid-tile *ngFor="let dish of dishes"> <!-- structural directive in angular basically of the angular 2 -->
+	    <img height="200px" src={{dish.image}} alt={{dish.name}} >
+	      <md-grid-tile-footer>		
+	  	    <h1 md-line>{{dish.name | uppercase }}</h1><!-- pipe is basically used for the conversion here as uppercase is an type of an conversion from small cases to CAPITAL LETTERS --> 
+	  	  </md-grid-tile-footer>
+	  </md-grid-tile> <!-- isne apne aap hi saare close kar diye WOW SO UNEXPECTED THING STRANGE BUT WORKED THANK GOD CONSOLE  -->
+	<!-- </md-gird-list> -->
+	<!-- </div> -->
+ 
+
+
+<!-- <div class="container" fxLayout="column" fxLayoutGap="200px" style="margin-top: 50%"> -->
+ 
+	<div fxFlex *ngIf="selectedDish" style="margin-top: 32%">
+		<md-card>
+			<md-card-header>
+				<md-card-title>
+					<h3>{{ selectedDish.name | uppercase }}</h3>
+				</md-card-title>
+			</md-card-header>							
+			<img md-card-image src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
+			<md-card-content>
+				<p> {{selectedDish.description}} </p>
+			</md-card-content>
+			<md-card-actions>
+				<button md-button>LIKE</button>
+				<button md-button>SHARE</button>
+			</md-card-actions>
+		</md-card>
+	</div> 
+
+<!-- </div> -->
+
+
+	
+<!-- </div>uncommented till now this div also band ho gya hoga -->
+
+
+
+
+
+	  <!-- outdated version of this layout 	
+	  <md-list-item *ngFor="let dish of dishes"> <!-- structural directive in angular basically of the angular 2 
 	    <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
 	  	<h1 md-line>{{dish.name}}</h1>
 	  	<p md-line>
 	  	  <span>{{dish.description}}</span>
 	  	</p>
-	  </md-list-item>   	
-	</md-list>
-</div>
+	  </md-list-item>
+	  -->
+
+
+
+
+
+
+
+
+<!-- using the ngIf directive  -->
+
+<!-- <div *ngIf="selectedDish">....</div> -->
+
+
 
 
 
