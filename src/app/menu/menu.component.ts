@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Dish } from '../shared/dish';
+import { DISHES } from '../shared/dishes';
+
+/*
 
 const DISHES: Dish[] = [
           {
@@ -33,6 +36,9 @@ const DISHES: Dish[] = [
             description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
          ];
 
+
+*/
+
 @Component({
   selector: 'app-menu',//standard selector name that the angualr CLI gives for my components.
   templateUrl: './menu.component.html',
@@ -42,10 +48,14 @@ export class MenuComponent implements OnInit {
   
   dishes: Dish[] = DISHES;
 
-  selectedDish: Dish = DISHES[0];
+  selectedDish: Dish;
   constructor() { }
 
   ngOnInit() {//one more method..
   }
 
+  onSelect(dish: Dish){
+      this.selectedDish = dish;
+  }  
+      
 }

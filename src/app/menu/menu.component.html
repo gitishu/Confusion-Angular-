@@ -11,21 +11,22 @@
 
 	<div fxFlex>
 	<md-grid-list cols="2" rowHeight="200px"> <!-- mg grid list is in its own div now --> 
-	  <md-grid-tile *ngFor="let dish of dishes"> <!-- structural directive in angular basically of the angular 2 -->
+	  <md-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)"> <!-- structural directive in angular basically of the angular 2 -->
 	    <img height="200px" src={{dish.image}} alt={{dish.name}} >
 	      <md-grid-tile-footer>		
 	  	    <h1 md-line>{{dish.name | uppercase }}</h1><!-- pipe is basically used for the conversion here as uppercase is an type of an conversion from small cases to CAPITAL LETTERS --> 
 	  	  </md-grid-tile-footer>
 	  </md-grid-tile> <!-- isne apne aap hi saare close kar diye WOW SO UNEXPECTED THING STRANGE BUT WORKED THANK GOD CONSOLE  -->
 	<!-- </md-gird-list> -->
-
 	<!-- </div> -->
 
+
  
+	<app-dishdetail [dish]="selectedDish"></app-dishdetail>
 
 <!-- 12 <div class="container" fxLayout="column" fxLayoutGap="200px" style="margin-top: 50%"> -->
 
-<div fxFlex *ngIf="selectedDish" style="margin-top: 32%">
+<!-- <div fxFlex *ngIf="selectedDish" style="margin-top: 32%">
 		<md-card>
 			<md-card-header>
 				<md-card-title>
@@ -41,13 +42,12 @@
 				<button md-button>SHARE</button>
 			</md-card-actions>
 		</md-card>
-</div>  
-
+</div>   -->
 
 <!-- 21 </div> -->
 
 
-	<app-dishdetail></app-dishdetail>
+
 	<!-- lets check this again by moving down here  -->
 	
 	
@@ -57,9 +57,9 @@
 
 
 
+<!-- </div> commented till now this div also band ho gya hoga ye sabse upar wala band hua hai -->
 
 
-<!-- </div> commented till now this div also band ho gya hoga -->
 
 
 

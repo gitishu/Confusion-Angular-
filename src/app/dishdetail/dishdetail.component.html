@@ -11,16 +11,39 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40" style="margin-bottom: 50%">
-    <p>
-    	<!-- Display the details of the Dish here -->
-    </p>
-  </div>
+ <div fxFlex="40">
+ 		<md-card *ngIf="dish">
+ 			<md-card-header>
+ 				<md-card-title>
+ 					<h3>{{ dish.name | uppercase }}</h3> <!-- by using the angular pipe here bas ek baar ise check karo and then commit karo go to services bro -->
+ 				</md-card-title>
+ 			</md-card-header>							
+ 			<img md-card-image src={{dish.image}} alt={{dish.name}}>
+ 			<md-card-content>
+ 				<p> {{dish.description}} </p>
+ 			</md-card-content>
+ 			<md-card-actions>
+ 				<button md-button>LIKE</button>
+ 				<button md-button>SHARE</button>
+ 			</md-card-actions>
+ 		</md-card>
+ </div>  
 
-  <div fxFlex="40" style="margin-top: 50%">
-    <p>
-    	<!-- Display the list of comments here -->
-	</p>
-  </div>
+ <div fxFlex="40">
+ 		<md-list *ngIf="dish">
+ 			<h3>Comments</h3>
+			<md-list-item *ngFor="let comment of dish.comments">
+				<h4 md-line>{{comment.comment}}</h4>
+				<p md-line>{{comment.rating}} Stars</p>
+				<p md-line>
+					<span> -- {{comment.author}} {{comment.date | date }}</span>
+				</p>
+			</md-list-item>
+
+ 		</md-list>
+ </div>  
 
 </div>
+
+
+    
