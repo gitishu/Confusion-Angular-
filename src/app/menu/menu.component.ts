@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Dish } from '../shared/dish';
-import { DISHES } from '../shared/dishes';
+// import { DISHES } from '../shared/dishes';
+
+
+import { DishService } from '../services/dish.service';
+
+
 
 /*
 
@@ -46,12 +51,15 @@ const DISHES: Dish[] = [
 })
 export class MenuComponent implements OnInit {
   
-  dishes: Dish[] = DISHES;
+  // dishes: Dish[] = DISHES;
+
+  dishes: Dish[];
 
   selectedDish: Dish;
-  constructor() { }
+  constructor(private dishService: DishService) { }
 
-  ngOnInit() {//one more method..
+  ngOnInit() {//one more method..use this lifecycle method to get know where we have to fetch the information
+    this.dishes = this.dishService.getDishes();
   }
 
   onSelect(dish: Dish){

@@ -34,6 +34,7 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { DishService } from './services/dish.service';
 
 @NgModule({//this class has the declarator associated with it which is an NgModule..
   declarations: [
@@ -49,7 +50,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
   	MaterialModule,
   	FlexLayoutModule
   ],
-  providers: [],//here comes the services that our module use 
+  providers: [ DishService ],//here comes the services that our module use 
   bootstrap: [AppComponent]
 })
 export class AppModule { } // module exports something that can be used by some another module
