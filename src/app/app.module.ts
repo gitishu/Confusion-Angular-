@@ -33,11 +33,13 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 @NgModule({//this class has the declarator associated with it which is an NgModule..
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DishdetailComponent
   ],
   imports: [//imports property specifying those modules that needs to be imported or the modules upon which our module is dependent upon 
     BrowserModule,
